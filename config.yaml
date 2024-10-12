@@ -5,3 +5,7 @@ account:
   LIBRARY_ID: UR_9XfPoJJe5LIUdVz
   VERIFY: True
 
+ports:    
+  port: 8080         #service port    
+  targetPort: 8080   #Pod Port    
+  nodePort: 30012  #Node Port from the range - 30000-32767

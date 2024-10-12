@@ -21,7 +21,7 @@ import yaml # pip install pyyaml
 __version_info__ = ('0', '1', '0')
 __version__ = '.'.join(__version_info__)
 
-history = \
+version_history = \
 """
 0.1.0 - initial version  
 """
@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     if args.history:
         print(f"{os.path.basename(__file__) } Version: {__version__}")
-        print(history)
+        print(version_history)
         exit(0)
 
     obj = YourClass(    cmd=args.cmd, 
