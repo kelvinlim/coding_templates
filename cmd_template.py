@@ -68,6 +68,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=description, formatter_class=argparse.RawTextHelpFormatter)
 
+    # handle multiple files
+    parser.add_argument("file_names", nargs='*')  # nargs='*' to combine all positional arguments into a single list
+
     parser.add_argument("--env", type = str,
                      help="name of env file in the current directory, default .env",
                       default=".env") 
@@ -96,6 +99,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    # Use glob to find files matching wildcards
+    file_names = []
+        # Use glob to find files matching wildcards
+        # If a string does not contain a wildcard, glob will return it as is.
+    for arg in args.file_names:
+            file_names += glob(arg)
+            
     if args.history:
         print(f"{os.path.basename(__file__) } Version: {__version__}")
         print(version_history)
