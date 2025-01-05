@@ -38,7 +38,8 @@ class YourClass:
             self.config[key] = value
 
         # read in .env file
-        self.config.update(dotenv_values(self.config['env']))
+        if 'env' in self.config:
+            self.config.update(dotenv_values(self.config['env']))
         
         if 'config' in self.config:
             # Open and read the YAML file
