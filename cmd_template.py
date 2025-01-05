@@ -69,6 +69,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=description, formatter_class=argparse.RawTextHelpFormatter)
 
+    # handle a single file on command line argument
+    parser.add_argument('csvfile',  type=str,  help='csv input file')
+    
     # handle multiple files
     parser.add_argument("file_names", nargs='*')  # nargs='*' to combine all positional arguments into a single list
 
