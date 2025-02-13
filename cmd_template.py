@@ -38,12 +38,9 @@ class YourClass:
         for key, value in kwargs.items():
             self.config[key] = value
 
-<<<<<<< HEAD
         # read in .env file
         if 'env' in self.config:
             self.config.update(dotenv_values(self.config['env']))
-=======
->>>>>>> 6f7729b (update)
         
                     
         pass
@@ -61,7 +58,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description=description, formatter_class=argparse.RawTextHelpFormatter)
 
-<<<<<<< HEAD
     # handle a single file on command line argument
     parser.add_argument('csvfile',  type=str,  help='csv input file')
     
@@ -76,9 +72,6 @@ if __name__ == "__main__":
                      help="name of yaml config file in the current directory, default config.yaml",
                       default="config.yaml") 
         
-=======
-       
->>>>>>> 6f7729b (update)
     parser.add_argument("--cmd", type = str,
                     help="cmd - [list, summarize], default list",
                     default = 'list')
@@ -96,7 +89,6 @@ if __name__ == "__main__":
     parser.add_argument("file_names", nargs='*')  # nargs='*' to combine all positional arguments into a single list
     args = parser.parse_args()
 
-<<<<<<< HEAD
     # Use glob to find files matching wildcards
     file_names = []
         # Use glob to find files matching wildcards
@@ -104,14 +96,6 @@ if __name__ == "__main__":
     for arg in args.file_names:
             file_names += glob(arg)
             
-=======
-    file_names = []
-    # Use glob to find files matching wildcards
-    # If a string does not contain a wildcard, glob will return it as is.
-    for arg in args.file_names:
-        file_names += glob(arg)
-
->>>>>>> 6f7729b (update)
     if args.history:
         print(f"{os.path.basename(__file__) } Version: {__version__}")
         print(version_history)
